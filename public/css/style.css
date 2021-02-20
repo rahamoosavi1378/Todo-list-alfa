@@ -1,0 +1,335 @@
+*, *:after, *:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+@font-face {
+  font-family: "Mikhak";
+  src: url("./../fonts/Mikhak-Medium.ttf") format("truetype"); }
+body, input {
+  font-family: "Mikhak", sans-serif; }
+
+div.main {
+  width: 100%;
+  height: 100vh;
+  direction: rtl; }
+  div.main div.container {
+    width: 100%;
+    max-width: 550px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; }
+    @media (min-width: 550px) {
+      div.main div.container {
+        box-shadow: 0 0 10px rgba(33, 33, 33, 0.6);
+        margin: 0 auto;
+        border-radius: 20px 20px 0 0;
+        overflow: hidden; } }
+    div.main div.container header {
+      width: 100%;
+      height: 255px;
+      /* 10% */
+      background-color: #212121;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden; }
+      div.main div.container header img {
+        width: 100%;
+        height: 100%; }
+      div.main div.container header span.data {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: 15px;
+        padding: 0 15px 3px;
+        line-height: 2rem;
+        font-size: 1.5rem;
+        border-radius: 50px;
+        background-color: rgba(0, 0, 0, 0.3); }
+        div.main div.container header span.data::selection {
+          background-color: inherit; }
+      div.main div.container header button.refresh {
+        text-shadow: 0 0 5px black;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 15px;
+        padding: 5px;
+        outline: none;
+        border: none;
+        font-size: 2rem;
+        cursor: pointer;
+        color: #fff;
+        background-color: transparent; }
+    div.main div.container section {
+      width: 100%;
+      height: 65%;
+      background-color: white;
+      padding: 10px;
+      overflow-y: auto;
+      margin-bottom: 50px; }
+      div.main div.container section .listBox {
+        width: 100%;
+        min-height: 55px;
+        border: 1px solid gray;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        overflow: hidden;
+        margin-bottom: 5px;
+        cursor: pointer;
+        position: relative; }
+        div.main div.container section .listBox .number {
+          background-color: #96b0ff;
+          align-self: stretch;
+          width: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-left: 5px solid #0f4aff; }
+        div.main div.container section .listBox .list {
+          padding: 5px 10px;
+          width: 100%; }
+          div.main div.container section .listBox .list h4 {
+            display: flex;
+            align-items: center;
+            min-height: 30px;
+            text-align: justify;
+            word-break: break-all; }
+          div.main div.container section .listBox .list p {
+            margin: 0 20px 8px 5px;
+            text-align: justify;
+            word-break: break-all; }
+          div.main div.container section .listBox .list span.mdi-close {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 10px 0 0 15px;
+            border-radius: 50px;
+            padding: 5px;
+            line-height: 1rem;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+            display: none;
+            cursor: pointer;
+            color: #ff2323; }
+            div.main div.container section .listBox .list span.mdi-close:hover {
+              background-color: rgba(255, 35, 35, 0.7);
+              color: white; }
+          div.main div.container section .listBox .list span.idPost {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            font-size: 0.8rem;
+            color: #757575;
+            padding: 0 0 0 5px; }
+        div.main div.container section .listBox:hover span.mdi-close {
+          display: block;
+          background-color: rgba(255, 35, 35, 0.3); }
+    div.main div.container footer {
+      width: 100%;
+      max-width: 550px;
+      height: 55px;
+      border-top: 1px solid gray;
+      border-bottom: 1px solid gray;
+      background-color: white;
+      display: flex;
+      flex-direction: row;
+      position: fixed;
+      bottom: 0;
+      margin-bottom: 0; }
+      @media (min-width: 550px) {
+        div.main div.container footer {
+          margin-bottom: 1%; } }
+      div.main div.container footer .cover {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        bottom: 0;
+        z-index: -2;
+        transition: 0.2s; }
+        div.main div.container footer .cover.coverTop {
+          height: 142px; }
+          div.main div.container footer .cover.coverTop.coverTopTop {
+            height: 200px; }
+      div.main div.container footer div.preview {
+        width: 100%;
+        height: auto;
+        background-color: #bfccff;
+        position: absolute;
+        top: auto;
+        bottom: -65px;
+        border-top: 3px solid #0f4aff;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 3px;
+        align-items: flex-start;
+        z-index: -1;
+        opacity: 0;
+        transition: 0.3s ease-in-out;
+        overflow-y: auto; }
+        div.main div.container footer div.preview.top {
+          bottom: 0 !important;
+          opacity: 1 !important; }
+          div.main div.container footer div.preview.top.top65 {
+            bottom: 48px !important;
+            opacity: 1 !important;
+            margin-bottom: 10px; }
+        div.main div.container footer div.preview h4 {
+          width: 100%;
+          display: flex;
+          line-height: 2rem;
+          justify-content: flex-start;
+          align-items: flex-start;
+          padding: 0 20px 0 0;
+          height: 35px; }
+          div.main div.container footer div.preview h4 .mdi-pencil {
+            color: #757575;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+            font-size: 1.5rem;
+            line-height: 1.5rem;
+            padding: 4px 10px 0 10px;
+            z-index: -2; }
+          div.main div.container footer div.preview h4:hover {
+            background-color: rgba(33, 33, 33, 0.2);
+            cursor: pointer; }
+          div.main div.container footer div.preview h4:hover .mdi-pencil {
+            color: #212121; }
+        div.main div.container footer div.preview p {
+          height: 55px;
+          width: 100%;
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+          padding: 0 20px 10px 10px;
+          margin-bottom: 4px;
+          word-break: break-all; }
+        div.main div.container footer div.preview .numberText {
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+          position: absolute;
+          color: #757575;
+          top: 1px;
+          left: 10px; }
+      div.main div.container footer div.errorValue {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        height: 40px;
+        background-color: #ffb3b3;
+        color: #c62121;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-top: 3px solid #ff4e4e;
+        opacity: 0;
+        transition: 0.3s ease-in-out; }
+        div.main div.container footer div.errorValue.show {
+          cursor: pointer;
+          opacity: 1 !important; }
+        div.main div.container footer div.errorValue.top {
+          bottom: 100px; }
+          div.main div.container footer div.errorValue.top.top101 {
+            bottom: 159px; }
+        div.main div.container footer div.errorValue span.mdi-close {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          padding: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          line-height: 0;
+          font-size: 1.5rem; }
+        div.main div.container footer div.errorValue:hover span.mdi-close {
+          background-color: #ff3b3b;
+          color: white; }
+      div.main div.container footer input {
+        width: 100%;
+        height: 100%;
+        border: none;
+        outline: none;
+        padding: 0 10px 0 5px;
+        border-right: 5px solid #2f62ff;
+        font-size: 1.4rem;
+        line-height: 0;
+        display: flex;
+        align-items: center;
+        color: #212121;
+        z-index: 1; }
+      div.main div.container footer button.mdi-send {
+        color: #2f62ff;
+        padding: 0 10px 0 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        div.main div.container footer button.mdi-send:hover, div.main div.container footer button.mdi-send:active {
+          color: #0035ca;
+          background-color: #dddddd; }
+      div.main div.container footer button.mdi-apps {
+        color: #757575;
+        padding: 0 5px; }
+        div.main div.container footer button.mdi-apps:hover, div.main div.container footer button.mdi-apps:active {
+          color: #212121;
+          background-color: #dddddd; }
+      div.main div.container footer .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        background-color: inherit;
+        border: none;
+        outline: none;
+        font-size: 2rem;
+        line-height: 2rem;
+        z-index: 1; }
+      div.main div.container footer .coverMenu {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        bottom: 54px;
+        left: 0;
+        overflow: hidden;
+        z-index: 0; }
+        div.main div.container footer .coverMenu.coverMenuTop {
+          height: 1000%; }
+        div.main div.container footer .coverMenu div.menuBox {
+          width: 100%;
+          background-color: crimson;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          z-index: -5; }
+          div.main div.container footer .coverMenu div.menuBox .item {
+            margin: 5px;
+            padding: 5px;
+            max-width: 60px;
+            max-height: 60px;
+            border: none;
+            outline: none;
+            background-color: #212121;
+            cursor: pointer;
+            font-size: 3rem;
+            line-height: 3rem;
+            color: white; }
+  @media (min-width: 550px) {
+    div.main {
+      background-color: #b4b4b4;
+      padding: 1% 0; } }
+
+/*# sourceMappingURL=style.css.map */
